@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:async';
 void main() {
   runApp(const MyApp());
 }
@@ -53,6 +53,7 @@ class SignupPage extends StatelessWidget{
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _exercise = 100;
+ int _timer = 0;
 
   void exercise() {
     setState(() {
@@ -63,6 +64,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+void _timed(){
+  void doStuffCallback(){
+    setState((){
+      _timer++;
+    });
+    var timer = new Timer(const Duration(milliseconds: 10), doStuffCallback);
+    if(_timer==100){
+      timer.cancel();
+    }
+  }
+}
   void _incrementCounter() {
     setState(() {
 
@@ -72,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
     exercise();
+    _timed();
   }
 
   @override
@@ -130,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     'You have pushed the button this many times:',
                   ),
                   Text(
-                    'Time done - $_counter\nTime Left - $_exercise',
+                    'Time done - $_counter\nTime Left - $_exercise\nTimer - $_timer',
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ],
