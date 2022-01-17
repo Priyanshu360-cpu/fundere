@@ -40,6 +40,17 @@ class SecondScreen extends StatelessWidget {
     );
   }
 }
+class SignupPage extends StatelessWidget{
+  @override
+  Widget build (BuildContext ctxt){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Home page"),
+      ),
+          body: const Text("Hewo"),
+    );
+  }
+}
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _exercise = 100;
@@ -76,7 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
               margin: const EdgeInsets.all(25),
               child: TextButton(
                 child: const Text('SignUp', style: TextStyle(fontSize: 20.0),),
-                onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  SignupPage()),
+                    );
+                    setState(() {
+                      _counter=0;
+                      _exercise=100;
+                    });
+                  }
               ),
             ),
 
@@ -89,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => new SecondScreen()),
+                      MaterialPageRoute(builder: (context) =>  SecondScreen()),
                     );
                     setState(() {
                     _counter=0;
