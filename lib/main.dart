@@ -91,7 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(builder: (context) => new SecondScreen()),
                     );
-                  }
+                    setState(() {
+                    _counter=0;
+                    _exercise=100;
+                  });
+                        }
               ),
             ),
             Container(
