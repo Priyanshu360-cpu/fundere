@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           body: Center(child: Column(children: <Widget>[
             Container(
               margin: const EdgeInsets.all(25),
-              child: FlatButton(
+              child: TextButton(
                 child: const Text('SignUp', style: TextStyle(fontSize: 20.0),),
                 onPressed: () {},
               ),
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     'You have pushed the button this many times:',
                   ),
                   Text(
-                    '$_counter\n$_exercise',
+                    'Time done - $_counter\nTime Left - $_exercise',
                     style: Theme.of(context).textTheme.headline4,
                   ),
                 ],
