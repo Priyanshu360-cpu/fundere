@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Fundere - Creating Differences'),
@@ -83,7 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
             title: const Text('Funder- Creating Difference'),
           ),
           body: Center(child: Column(children: <Widget>[
+
             Container(
+
               margin: const EdgeInsets.all(25),
               child: TextButton(
                 child: const Text('SignUp', style: TextStyle(fontSize: 20.0),),
@@ -98,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   }
               ),
+
             ),
 
             Container(
@@ -135,6 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
 
             ),
+
           ]
           )),
         floatingActionButton: FloatingActionButton(
