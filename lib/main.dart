@@ -70,6 +70,7 @@ void _timed(){
       _timer++;
     });
     var timer = new Timer(const Duration(milliseconds: 10), doStuffCallback);
+    timer;
     if(_timer==100){
       timer.cancel();
     }
